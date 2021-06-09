@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-lg-4 offset-lg-4">
+        <h2 class="title">BMI CALCULATOR</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="backgroundItem" [ngClass]="{'genderInactive': gender === 'Female'}">
+                    <div class="container" style="cursor: pointer;" (click)="male()">
+                        <i class="fas fa-mars gender"></i>
+                        <p>Male</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="backgroundItem" [ngClass]="{'genderInactive': gender === 'Male'}">
+                    <div class="container" style="cursor: pointer;" (click)="female()">
+                        <i class="fas fa-venus gender"></i>
+                        <p>Female</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="backgroundItem">
+                    <div class="container">
+                        <p>Height</p>
+                        <div class="numberStyle">
+                            {{heigth}}
+                            <span class="measureStyle">cm</span>
+                        </div>
+                        <input type="range" (input)="changeHeigth($event)" value="heigth" min="120" max="220" class="form-range">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="backgroundItem">
+                    <div class="container">
+                        <p>Weigth</p>
+                        <div class="numberStyle">
+                            {{weigth}}
+                        </div>
+                        <div>
+                            <i class="fas fa-minus MPicon" (click)="weigth = weigth - 1"></i>
+                            <i class="fas fa-plus MPicon" (click)="weigth = weigth + 1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="backgroundItem">
+                    <div class="container">
+                        <p>Age</p>
+                        <div class="numberStyle">
+                            {{age}}
+                        </div>
+                        <div>
+                            <i class="fas fa-minus MPicon" (click)="age = age - 1"></i>
+                            <i class="fas fa-plus MPicon" (click)="age = age + 1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button (click)="calculate()" class="btn btn-primary btn-lg btn-block btn-color">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
